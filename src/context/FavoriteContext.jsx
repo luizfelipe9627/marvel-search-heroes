@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import { useAnimation } from "framer-motion";
 
 const FavoriteContext = React.createContext(null);
 
@@ -18,9 +17,7 @@ export const FavoriteProvider = ({ children }) => {
     return JSON.parse(localStorage.getItem("favoritesHeroes") || "[]");
   });
 
-  const controls = useAnimation();
-
-  const toggleFavorite = async (hero) => {
+  const toggleFavorite = async (hero, controls) => {
     let updatedFavorites;
 
     const isFavorite = favorites.some((fav) => fav.id === hero.id);
@@ -58,7 +55,7 @@ export const FavoriteProvider = ({ children }) => {
   };
 
   return (
-    <FavoriteContext.Provider value={{ favorites, toggleFavorite, isHeartFilled, controls }}>
+    <FavoriteContext.Provider value={{ favorites, toggleFavorite, isHeartFilled }}>
       {children}
     </FavoriteContext.Provider>
   );
