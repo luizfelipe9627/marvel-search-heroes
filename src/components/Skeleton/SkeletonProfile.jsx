@@ -69,7 +69,10 @@ const SkeletonProfile = () => {
             {Array(10)
               .fill(null)
               .map((_, index) => (
-                <Skeleton key={index}  height={200} />
+                <div key={index} className={styles.skeletonGridItem}>
+                  <Skeleton key={index} height={200} />
+                  <Skeleton key={index} height={20} />
+                </div>
               ))}
           </div>
         </div>
