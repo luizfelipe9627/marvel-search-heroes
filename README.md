@@ -10,6 +10,10 @@ Teste técnico para a vaga de desenvolvedor web, como teste foi proposto o segui
 
 Desenvolver uma aplicação de listagem e detalhe de personagens de quadrinhos.
 
+## 👀 Observação
+
+A API da Marvel possui lentidão em suas requisições, por isso, a aplicação pode demorar um pouco para carregar os dados.
+
 ## 📑 Requisitos
 
 #### `Obrigatórios`
