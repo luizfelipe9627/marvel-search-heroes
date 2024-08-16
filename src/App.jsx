@@ -3,17 +3,20 @@ import AppRoutes from "./routes";
 import { DataProvider } from "./context/DataContext";
 import { SearchProvider } from "./context/SearchContext";
 import { ToggleProvider } from "./context/ToggleContext";
+import { FavoriteProvider } from "./context/FavoriteContext";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <SearchProvider>
-        <ToggleProvider>
-          <DataProvider>
-            <AppRoutes />
-          </DataProvider>
-        </ToggleProvider>
-      </SearchProvider>
+      <FavoriteProvider>
+        <SearchProvider>
+          <ToggleProvider>
+            <DataProvider>
+              <AppRoutes />
+            </DataProvider>
+          </ToggleProvider>
+        </SearchProvider>
+      </FavoriteProvider>
     </BrowserRouter>
   );
 };
