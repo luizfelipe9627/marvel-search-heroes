@@ -1,0 +1,113 @@
+.heroInfo {
+  display: flex;
+  width: 100%;
+  gap: 8rem;
+  margin: 4rem 0;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.title h1 {
+  width: 250px;
+}
+
+.description p {
+  line-height: 1.8;
+  letter-spacing: 0.6px;
+}
+
+.infos {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.img {
+  width: 70%;
+}
+
+.favorite {
+  width: 30px;
+  cursor: pointer;
+}
+
+.favorite img {
+  width: 34px;
+  cursor: pointer;
+}
+
+.img img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.details {
+  display: flex;
+  gap: 6rem;
+}
+
+.comics,
+.movies {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comics .title,
+.movies .title,
+.rating .title,
+.lastComic .title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--gray-dark);
+}
+
+.comicsInfo,
+.moviesInfo {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+  font-size: 18px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lastComic {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lastComic span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .heroInfo {
+    margin: 1rem 0;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 80px;
+  }
+
+  .infos, .img {
+    width: 100%;
+  }
+}
