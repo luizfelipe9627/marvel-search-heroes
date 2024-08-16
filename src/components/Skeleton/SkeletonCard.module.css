@@ -1,0 +1,28 @@
+/* SkeletonCard.module.css */
+
+.skeletonContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  gap: 16px;
+}
+
+.skeletonImage {
+  height: 248px;
+}
+
+.skeletonDetails {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+.skeletonText {
+  width: 150px;
+  height: 18px;
+}
+
+.skeletonIcon {
+  width: 18px;
+  height: 18px;
+}
