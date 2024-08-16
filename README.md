@@ -2,7 +2,7 @@
 
 ![Badge](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)
 
-<img src="https://github.com/luizfelipe9627/marvel-search-heroes/blob/main/src/assets/apresentacao.png" alt="Apresentação">
+<img src="https://github.com/luizfelipe9627/marvel-search-heroes/blob/main/src/assets/img/apresentacao.png" alt="Apresentação">
 
 ## 📄 Descrição
 
