@@ -6,14 +6,13 @@ import heartFull from "../../assets/svg/heart-full.svg";
 import { useToggleContext } from "../../context/ToggleContext";
 import { useDataContext } from "../../context/DataContext";
 import { useSearchContext } from "../../context/SearchContext";
+import { useFavoriteContext } from "../../context/FavoriteContext";
 
 const Toggle = () => {
   const { toggleFavorite, setToggleFavorite } = useToggleContext();
   const { dataAPI, isLoading } = useDataContext();
   const { search } = useSearchContext();
-
-  const favoritesHeroes =
-    JSON.parse(localStorage.getItem("favoritesHeroes")) || [];
+  const { favorites } = useFavoriteContext();
 
   const filterHeroes = (heroes) =>
     heroes.filter((hero) =>
@@ -21,7 +20,7 @@ const Toggle = () => {
     );
 
   const filteredCount = toggleFavorite
-    ? filterHeroes(favoritesHeroes).length
+    ? filterHeroes(favorites).length
     : dataAPI
     ? filterHeroes(dataAPI.data.results).length
     : 0;
@@ -30,7 +29,7 @@ const Toggle = () => {
     <div className={styles.container}>
       <div className={styles.panel}>
         <div className={styles.count}>
-          {isLoading ? (
+          {isLoading && !toggleFavorite ? (
             <p>Buscando heróis...</p>
           ) : filteredCount === 1 ? (
             <p>Encontrado 1 herói</p>
