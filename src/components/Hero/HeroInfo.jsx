@@ -6,15 +6,12 @@ import styles from "./HeroInfo.module.css";
 import heartFull from "../../assets/svg/heart-full.svg";
 import heartEmpty from "../../assets/svg/heart-empty.svg";
 import Paragraph from "../Text/Paragraph";
-import useFavorite from "../../hooks/useFavorite";
 import { motion } from "framer-motion";
 import starsFull from "../../assets/svg/stars-full.svg";
+import { useFavoriteContext } from "../../context/FavoriteContext";
 
 const HeroInfo = ({ hero }) => {
-  const { isHeartFilled, toggleFavorite, controls } = useFavorite({
-    hero: hero,
-    localStorageName: "favoritesHeroes",
-  });
+  const { isHeartFilled, toggleFavorite, controls } = useFavoriteContext();
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -34,9 +31,12 @@ const HeroInfo = ({ hero }) => {
         <div className={styles.container}>
           <div className={styles.title}>
             <Title>{hero.name}</Title>
-            <span className={styles.favorite} onClick={toggleFavorite}>
+            <span
+              className={styles.favorite}
+              onClick={() => toggleFavorite(hero)}
+            >
               <motion.img
-                src={isHeartFilled ? heartFull : heartEmpty}
+                src={isHeartFilled(hero.id) ? heartFull : heartEmpty}
                 alt="favorite"
                 whileTap={{ scale: 1.2 }}
                 animate={controls}
