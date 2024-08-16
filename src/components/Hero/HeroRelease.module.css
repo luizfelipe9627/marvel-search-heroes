@@ -1,0 +1,24 @@
+.comics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 4rem;
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--gray-dark);
+}
+
+.comics img {
+  min-height: 200px;
+  object-fit: cover;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.comicsItem {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--gray-dark);
+}
