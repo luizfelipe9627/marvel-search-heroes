@@ -1,0 +1,68 @@
+.skeletonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem 0;
+  gap: 8rem;
+}
+
+.skeletonInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.skeletonTitle {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.skeletonDescription {
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.skeletonDetails {
+  display: flex;
+  gap: 6rem;
+}
+
+.skeletonDetailItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.skeletonIconText {
+  display: flex;
+  gap: 16px;
+  align-items: end;
+}
+
+.skeletonRating {
+  display: flex;
+  gap: 12px;
+}
+
+.skeletonImage {
+  height: 550px;
+}
+
+.skeletonImageContainer {
+  width: 100%;
+}
+
+.skeletonGridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .skeletonContainer {
+    margin: 1rem 0;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 80px;
+  }
+}
