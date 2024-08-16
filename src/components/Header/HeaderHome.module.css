@@ -1,0 +1,12 @@
+.headerHome {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .headerHome img {
+    max-width: 80vw;
+  }
+}
