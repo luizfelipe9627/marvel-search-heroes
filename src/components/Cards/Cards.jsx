@@ -10,6 +10,7 @@ import Error from "../../helper/Error";
 import { useDataContext } from "../../context/DataContext";
 import { useToggleContext } from "../../context/ToggleContext";
 import Paragraph from "../Text/Paragraph";
+import { useFavoriteContext } from "../../context/FavoriteContext";
 
 const ts = new Date().getTime();
 const publicKey = "737a3b0d056686bdd1f60621b36423e6";
@@ -24,8 +25,7 @@ const Cards = () => {
   const { search } = useSearchContext();
   const { setDataAPI, setIsLoading } = useDataContext();
   const { toggleFavorite } = useToggleContext();
-
-  const favoritesHeroes = JSON.parse(localStorage.getItem("favoritesHeroes"));
+  const { favorites } = useFavoriteContext();
 
   const urlHeroesSearch = `https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}&nameStartsWith=${search}&limit=${limit}`;
 
@@ -42,17 +42,17 @@ const Cards = () => {
   if (error) return <Error error={error} />;
 
   if (toggleFavorite) {
-    const filteredFavorites = favoritesHeroes.filter((hero) =>
-      hero.name.toLowerCase().includes(search.toLowerCase()),
-    );
-
-    if (filteredFavorites.length === 0) {
+    if (!favorites || favorites.length === 0) {
       return (
         <Paragraph>
           Não há heróis favoritados ou o nome pesquisado não foi encontrado.
         </Paragraph>
       );
     }
+
+    const filteredFavorites = favorites.filter((hero) =>
+      hero.name.toLowerCase().includes(search.toLowerCase()),
+    );
 
     return (
       <div className={styles.cards}>
