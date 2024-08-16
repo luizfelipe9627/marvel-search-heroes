@@ -58,6 +58,12 @@
   margin-top: 2rem;
 }
 
+.skeletonGridItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 @media (max-width: 768px) {
   .skeletonContainer {
     margin: 1rem 0;
