@@ -1,0 +1,33 @@
+.headerHero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80vw;
+  margin: 0 auto;
+  gap: 4rem;
+}
+
+.headerHero a {
+  display: contents;
+}
+
+.logo {
+  width: auto;
+  height: 80px;
+}
+
+@media (max-width: 768px) {
+  .headerHero {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .headerHero a {
+    display: initial;
+    padding-top: 20px;
+  }
+
+  .headerHero img {
+    max-width: 80vw;
+  }
+}
