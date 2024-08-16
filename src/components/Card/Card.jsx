@@ -4,13 +4,10 @@ import heartFull from "../../assets/svg/heart-full.svg";
 import styles from "./Card.module.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import useFavorite from "../../hooks/useFavorite";
+import { useFavoriteContext } from "../../context/FavoriteContext";
 
 const Card = ({ hero }) => {
-  const { isHeartFilled, toggleFavorite, controls } = useFavorite({
-    hero: hero,
-    localStorageName: "favoritesHeroes",
-  });
+  const { isHeartFilled, toggleFavorite, controls } = useFavoriteContext();
 
   return (
     <div className={styles.card} key={hero.id}>
@@ -26,10 +23,10 @@ const Card = ({ hero }) => {
         <h1>{hero.name}</h1>
         <span
           className={styles.favorite}
-          onClick={toggleFavorite}
+          onClick={() => toggleFavorite(hero)}
         >
           <motion.img
-            src={isHeartFilled ? heartFull : heartEmpty}
+            src={isHeartFilled(hero.id) ? heartFull : heartEmpty}
             alt="favorite"
             whileTap={{ scale: 1.2 }}
             animate={controls}
