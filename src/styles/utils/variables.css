@@ -1,0 +1,9 @@
+:root {
+  --primary-red: #ff1510;
+  --primary-red-background: #fdecec;
+  --success-background: #e7f6e7;
+
+  --gray-light: #b9b9b9;
+  --gray-medium: #8c8c8c;
+  --gray-dark: #404040;
+}
