@@ -15,7 +15,7 @@ const HeroRelease = ({ hero }) => {
 
       <ul className={styles.comics}>
         {limitedComics.map((comic) => (
-          <li key={comic.resourceURI} className={styles.comicItem}>
+          <li key={comic.resourceURI} className={styles.comicsItem}>
             <img
               src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
               alt={hero.name}
