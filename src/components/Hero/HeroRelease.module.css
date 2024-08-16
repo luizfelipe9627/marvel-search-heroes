@@ -18,7 +18,10 @@
 }
 
 .comicsItem {
-  margin-top: 1rem;
   font-weight: 600;
   color: var(--gray-dark);
+}
+
+.comicsItem p {
+  margin-top: 1rem;
 }
